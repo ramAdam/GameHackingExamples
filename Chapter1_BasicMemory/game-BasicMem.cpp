@@ -2,26 +2,34 @@
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_native_dialog.h>
+#include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_font.h>
 #include <stdio.h>
 
-#include "..\allegro_linkers.h"
+//#include "..\allegro_linkers.h"
 #include "Location-BasicMem.h"
 
 Location selfLocation(12, 16);
 Location ballLocation(15, 13);
 
-BYTE map[24][32];
+unsigned char map[24][32];
 
 int keys[255];
+
+
+
 
 bool checkWin()
 {
 	return (map[ballLocation.y][ballLocation.x] == 4);
 }
 void drawBackground()
-{	for (int i = 0; i <= 24; i++)
+{
+
+	al_init();
+
+	for (int i = 0; i <= 24; i++)
 	{
 		for (int t = 0; t <= 32; t++)
 		{
@@ -100,7 +108,7 @@ int main(void)
 
 	do
 	{
-		ZeroMemory(&keys, 255);
+		memset(&keys,0, 255);
 
 		FILE* file = fopen("game.map", "rb");
 		if (!file)
@@ -208,7 +216,7 @@ int main(void)
 
 	if (strlen(error) > 0)
 	{
-		al_show_native_message_box(NULL, NULL, "error", error, NULL, NULL);
+		al_show_native_message_box(NULL, NULL, "error", error, NULL, ALLEGRO_MESSAGEBOX_YES_NO);
 		return -1;
 	}
 
