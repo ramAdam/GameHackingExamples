@@ -11,5 +11,7 @@ All of the example code should compile out-of-the-box on Visual Studio 2010, and
 If you can't compile yourself, all of the binaries are in the `/bin/` directory. Debug binaries are in the `/bin/DEBUG_BUILDS/` directory with included debug databases. You may need to grab [this redistributable package from Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=5555) to run the binaries if you don't have Visual Studio.
 
 # Compile on linux
-Chapter_01 example code works on linux now
+Chapter_01 example code works on linux now:
+```
 cd Chapter1_BasicMemory && make
+```
