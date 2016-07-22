@@ -14,4 +14,5 @@ If you can't compile yourself, all of the binaries are in the `/bin/` directory.
 Chapter_01 example code works on linux now:
 ```
 cd Chapter1_BasicMemory && make
+./game-BasicMem
 ```
